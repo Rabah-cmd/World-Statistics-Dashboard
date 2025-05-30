@@ -1,0 +1,12 @@
+# My Project
+
+Welcome to my project! Here’s a useful link:
+
+[Click here to visit my website](project-root/
+├── index.html              # Main HTML file
+├── assets/
+│   └── js/
+│       └── scripts.js      # JavaScript logic (dynamic data, display updates)
+├── styles.css              # External CSS if separated (optional)
+└── README.md               # Project overview
+)

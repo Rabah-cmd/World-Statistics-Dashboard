@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <title>World Statistics Dashboard</title>
+    
+    <style>
+        /* Add to your CSS file or inside a <style> tag */
+        .continent-box {
+            display: inline-block;
+            width: 180px;
+            vertical-align: top;
+            margin-right: 10px;
+        }
+
+        body {
+            background: #ffa500;
+            /* orange */
+        }
+    </style>
+
+    </head>
+
+<body>
+    <header>
+        <h1>🌐 World Statistics Dashboard</h1>
+        <p>Your quick glance at key global figures</p>
+    </header>
+
+    <main class="container" style="margin-top: 10px;">
+        <section id="population">
+            <h2>🌍 Population</h2>
+            <div id="continentsContainer"></div>
+        </section>
+
+        <!--
+        <section id="economy">
+            <h2>💰 Economy</h2>
+            <div id="economyBox" style="
+        border: 1px solid #b3d1ff;
+        background: #e6f2ff;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 10px;
+        width: 100px;
+        position: relative;
+        display: block; /* <-- make sure this is block, not none */
+    ">
+                <div style="
+                    position: absolute;
+                    top: -16px;
+                    left: 30px;
+                    width: 0;
+                    height: 0;
+                    border-left: 12px solid transparent;
+                    border-right: 12px solid transparent;
+                    border-bottom: 16px solid #b3d1ff;
+                "></div>
+                <strong>Economy</strong>
+                <p id="economyValue" style="margin: 8px 0 0 0;"></p>
+            </div>
+        </section>
+
+        <section id="currency">
+            <h2>💱 Currency</h2>
+            <div id="currencyBox" style="
+        border: 1px solid #ffd966;
+        background: #fffbe6;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 10px;
+        width: 100px;
+        position: relative;
+        
+    ">
+                <div style="
+                    position: absolute;
+                    top: -16px;
+                    left: 30px;
+                    width: 0;
+                    height: 0;
+                    border-left: 12px solid transparent;
+                    border-right: 12px solid transparent;
+                    border-bottom: 16px solid #ffd966;
+                "></div>
+                <strong>Currency</strong>
+                <p id="currencyValue" style="margin: 8px 0 0 0;"></p>
+            </div>
+        </section>
+        <script>
+            // Example: Hook this up to your country selection logic
+            // Call showCurrencyBox('United States Dollar (USD)') when a country is selected
+            function showCurrencyBox(currency) {
+                const box = document.getElementById('currencyBox');
+                const value = document.getElementById('currencyValue');
+                value.textContent = currency;
+                box.style.display = 'block';
+            }
+            // Example usage (remove this in production):
+            // showCurrencyBox('Euro (EUR)');
+        </script>
+
+        <section id="exportation">
+            <h2>📦 Exportation</h2>
+            <div id="exportationBox" style="
+        border: 1px solid #8fd9ff;
+        background: #e6f7ff;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 10px;
+        width: 100px;
+        position: relative;
+        
+    ">
+                <div style="
+                    position: absolute;
+                    top: -16px;
+                    left: 30px;
+                    width: 0;
+                    height: 0;
+                    border-left: 12px solid transparent;
+                    border-right: 12px solid transparent;
+                    border-bottom: 16px solid #8fd9ff;
+                "></div>
+                <strong>Exportation</strong>
+                <p id="exportationValue" style="margin: 8px 0 0 0;"></p>
+            </div>
+        </section>
+
+        <section id="importation">
+            <h2>📥 Importation</h2>
+            <div id="importationBox" style="
+        border: 1px solid #ffb3b3;
+        background: #fff0f0;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 10px;
+        width: 100px;
+        position: relative;
+        
+    ">
+                <div style="
+                    position: absolute;
+                    top: -16px;
+                    left: 30px;
+                    width: 0;
+                    height: 0;
+                    border-left: 12px solid transparent;
+                    border-right: 12px solid transparent;
+                    border-bottom: 16px solid #ffb3b3;
+                "></div>
+                <strong>Importation</strong>
+                <p id="importationValue" style="margin: 8px 0 0 0;"></p>
+            </div>
+        </section>
+        -->
+    </main>
+
+    <footer>
+        <p>© 2025 WorldStats Inc.</p>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
