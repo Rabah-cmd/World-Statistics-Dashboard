@@ -6,6 +6,28 @@ const worldStats = {
   importation: "$21.5 trillion (Top: USA, China, Germany)"
 };
 
+// Add this mapping near your data section (before DOMContentLoaded)
+const countryTimezones = {
+  // Africa
+  "Nigeria": "Africa/Lagos", "Ethiopia": "Africa/Addis_Ababa", "Egypt": "Africa/Cairo", "DR Congo": "Africa/Kinshasa", "Tanzania": "Africa/Dar_es_Salaam",
+  "South Africa": "Africa/Johannesburg", "Kenya": "Africa/Nairobi", "Uganda": "Africa/Kampala", "Algeria": "Africa/Algiers", "Sudan": "Africa/Khartoum",
+  // Asia
+  "China": "Asia/Shanghai", "India": "Asia/Kolkata", "Indonesia": "Asia/Jakarta", "Pakistan": "Asia/Karachi", "Bangladesh": "Asia/Dhaka",
+  "Japan": "Asia/Tokyo", "Philippines": "Asia/Manila", "Vietnam": "Asia/Ho_Chi_Minh", "Turkey": "Europe/Istanbul", "Iran": "Asia/Tehran",
+  // Europe
+  "Russia": "Europe/Moscow", "Germany": "Europe/Berlin", "United Kingdom": "Europe/London", "France": "Europe/Paris", "Italy": "Europe/Rome",
+  "Spain": "Europe/Madrid", "Ukraine": "Europe/Kyiv", "Poland": "Europe/Warsaw", "Romania": "Europe/Bucharest", "Netherlands": "Europe/Amsterdam",
+  // North America
+  "United States": "America/New_York", "Mexico": "America/Mexico_City", "Canada": "America/Toronto", "Guatemala": "America/Guatemala", "Honduras": "America/Tegucigalpa",
+  "Cuba": "America/Havana", "Haiti": "America/Port-au-Prince", "Dominican Republic": "America/Santo_Domingo", "El Salvador": "America/El_Salvador", "Nicaragua": "America/Managua",
+  // South America
+  "Brazil": "America/Sao_Paulo", "Colombia": "America/Bogota", "Argentina": "America/Argentina/Buenos_Aires", "Peru": "America/Lima", "Venezuela": "America/Caracas",
+  "Chile": "America/Santiago", "Ecuador": "America/Guayaquil", "Bolivia": "America/La_Paz", "Paraguay": "America/Asuncion", "Uruguay": "America/Montevideo",
+  // Middle East
+  "Saudi Arabia": "Asia/Riyadh", "Iran": "Asia/Tehran", "Turkey": "Europe/Istanbul", "Iraq": "Asia/Baghdad", "United Arab Emirates": "Asia/Dubai",
+  "Israel": "Asia/Jerusalem", "Jordan": "Asia/Amman", "Lebanon": "Asia/Beirut", "Oman": "Asia/Muscat", "Qatar": "Asia/Qatar"
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   // Optionally display world stats if you have elements for them
   if (document.getElementById("populationData")) {
@@ -44,6 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "South America": [
       "Brazil", "Colombia", "Argentina", "Peru", "Venezuela",
       "Chile", "Ecuador", "Bolivia", "Paraguay", "Uruguay"
+    ],
+    "Middle East": [
+      "Saudi Arabia", "Iran", "Turkey", "Iraq", "United Arab Emirates",
+      "Israel", "Jordan", "Lebanon", "Oman", "Qatar"
     ]
   };
 
@@ -58,7 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "United States": "$28T GDP", "Mexico": "$1.6T GDP", "Canada": "$2.2T GDP", "Guatemala": "$95B GDP", "Honduras": "$30B GDP",
     "Cuba": "$110B GDP", "Haiti": "$22B GDP", "Dominican Republic": "$120B GDP", "El Salvador": "$32B GDP", "Nicaragua": "$15B GDP",
     "Brazil": "$2.2T GDP", "Colombia": "$350B GDP", "Argentina": "$641B GDP", "Peru": "$268B GDP", "Venezuela": "$186B GDP",
-    "Chile": "$310B GDP", "Ecuador": "$115B GDP", "Bolivia": "$44B GDP", "Paraguay": "$41B GDP", "Uruguay": "$69B GDP"
+    "Chile": "$310B GDP", "Ecuador": "$115B GDP", "Bolivia": "$44B GDP", "Paraguay": "$41B GDP", "Uruguay": "$69B GDP",
+    "Saudi Arabia": "$1.1T GDP", "Iran": "$388B GDP", "Turkey": "$1.1T GDP", "Iraq": "$264B GDP", "United Arab Emirates": "$509B GDP",
+    "Israel": "$522B GDP", "Jordan": "$49B GDP", "Lebanon": "$23B GDP", "Oman": "$114B GDP", "Qatar": "$235B GDP"
   };
 
   // Add this object after countryEconomy for demonstration
@@ -72,7 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "United States": "339,996,563", "Mexico": "128,455,567", "Canada": "38,781,291", "Guatemala": "17,703,190", "Honduras": "10,593,798",
     "Cuba": "11,194,449", "Haiti": "11,724,763", "Dominican Republic": "11,332,972", "El Salvador": "6,364,943", "Nicaragua": "7,046,310",
     "Brazil": "216,422,446", "Colombia": "52,085,168", "Argentina": "45,773,884", "Peru": "34,352,719", "Venezuela": "28,838,499",
-    "Chile": "19,629,590", "Ecuador": "18,190,484", "Bolivia": "12,388,571", "Paraguay": "6,704,314", "Uruguay": "3,423,108"
+    "Chile": "19,629,590", "Ecuador": "18,190,484", "Bolivia": "12,388,571", "Paraguay": "6,704,314", "Uruguay": "3,423,108",
+    "Saudi Arabia": "36,947,025", "Iran": "89,172,767", "Turkey": "85,816,199", "Iraq": "45,504,560", "United Arab Emirates": "9,516,871",
+    "Israel": "9,364,000", "Jordan": "11,337,052", "Lebanon": "5,353,930", "Oman": "4,644,384", "Qatar": "2,716,391"
   };
 
   // Example currency data for demonstration
@@ -86,7 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "United States": "United States Dollar (USD)", "Mexico": "Mexican Peso (MXN)", "Canada": "Canadian Dollar (CAD)", "Guatemala": "Guatemalan Quetzal (GTQ)", "Honduras": "Honduran Lempira (HNL)",
     "Cuba": "Cuban Peso (CUP)", "Haiti": "Haitian Gourde (HTG)", "Dominican Republic": "Dominican Peso (DOP)", "El Salvador": "United States Dollar (USD)", "Nicaragua": "Nicaraguan Córdoba (NIO)",
     "Brazil": "Brazilian Real (BRL)", "Colombia": "Colombian Peso (COP)", "Argentina": "Argentine Peso (ARS)", "Peru": "Peruvian Sol (PEN)", "Venezuela": "Venezuelan Bolívar (VES)",
-    "Chile": "Chilean Peso (CLP)", "Ecuador": "United States Dollar (USD)", "Bolivia": "Bolivian Boliviano (BOB)", "Paraguay": "Paraguayan Guaraní (PYG)", "Uruguay": "Uruguayan Peso (UYU)"
+    "Chile": "Chilean Peso (CLP)", "Ecuador": "United States Dollar (USD)", "Bolivia": "Bolivian Boliviano (BOB)", "Paraguay": "Paraguayan Guaraní (PYG)", "Uruguay": "Uruguayan Peso (UYU)",
+    "Saudi Arabia": "Saudi Riyal (SAR)", "Iran": "Iranian Rial (IRR)", "Turkey": "Turkish Lira (TRY)", "Iraq": "Iraqi Dinar (IQD)", "United Arab Emirates": "UAE Dirham (AED)",
+    "Israel": "Israeli New Shekel (ILS)", "Jordan": "Jordanian Dinar (JOD)", "Lebanon": "Lebanese Pound (LBP)", "Oman": "Omani Rial (OMR)", "Qatar": "Qatari Riyal (QAR)"
   };
 
   // Example exportation and importation data for demonstration
@@ -100,7 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "United States": "$2.1T exports", "Mexico": "$593B exports", "Canada": "$596B exports", "Guatemala": "$15B exports", "Honduras": "$11B exports",
     "Cuba": "$2B exports", "Haiti": "$1B exports", "Dominican Republic": "$12B exports", "El Salvador": "$7B exports", "Nicaragua": "$7B exports",
     "Brazil": "$340B exports", "Colombia": "$57B exports", "Argentina": "$88B exports", "Peru": "$65B exports", "Venezuela": "$33B exports",
-    "Chile": "$97B exports", "Ecuador": "$33B exports", "Bolivia": "$13B exports", "Paraguay": "$9B exports", "Uruguay": "$13B exports"
+    "Chile": "$97B exports", "Ecuador": "$33B exports", "Bolivia": "$13B exports", "Paraguay": "$9B exports", "Uruguay": "$13B exports",
+    "Saudi Arabia": "$321B exports", "Iran": "$45B exports", "Turkey": "$256B exports", "Iraq": "$115B exports", "United Arab Emirates": "$425B exports",
+    "Israel": "$67B exports", "Jordan": "$11B exports", "Lebanon": "$4B exports", "Oman": "$56B exports", "Qatar": "$86B exports"
   };
 
   const countryImportation = {
@@ -113,7 +147,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "United States": "$3.4T imports", "Mexico": "$604B imports", "Canada": "$631B imports", "Guatemala": "$24B imports", "Honduras": "$15B imports",
     "Cuba": "$10B imports", "Haiti": "$5B imports", "Dominican Republic": "$25B imports", "El Salvador": "$15B imports", "Nicaragua": "$9B imports",
     "Brazil": "$272B imports", "Colombia": "$67B imports", "Argentina": "$81B imports", "Peru": "$52B imports", "Venezuela": "$16B imports",
-    "Chile": "$89B imports", "Ecuador": "$31B imports", "Bolivia": "$11B imports", "Paraguay": "$14B imports", "Uruguay": "$12B imports"
+    "Chile": "$89B imports", "Ecuador": "$31B imports", "Bolivia": "$11B imports", "Paraguay": "$14B imports", "Uruguay": "$12B imports",
+    "Saudi Arabia": "$178B imports", "Iran": "$54B imports", "Turkey": "$361B imports", "Iraq": "$68B imports", "United Arab Emirates": "$365B imports",
+    "Israel": "$90B imports", "Jordan": "$24B imports", "Lebanon": "$19B imports", "Oman": "$33B imports", "Qatar": "$28B imports"
   };
 
   const continents = Object.keys(continentCountries);
@@ -272,6 +308,17 @@ document.addEventListener("DOMContentLoaded", () => {
             importationValue.textContent = countryImportation[this.value] || "Data not available";
             importationBox.style.display = "block";
           }
+          // Show time in the time card for this continent
+          const timeValue = document.getElementById(`${continent.toLowerCase()}TimeValue`);
+          if (timeValue) {
+            const now = new Date();
+            timeValue.textContent = now.toLocaleTimeString();
+            // Optional: update every second while a country is selected
+            if (timeValue._interval) clearInterval(timeValue._interval);
+            timeValue._interval = setInterval(() => {
+              timeValue.textContent = new Date().toLocaleTimeString();
+            }, 1000);
+          }
         } else {
           countryDisplay.textContent = "";
           countryEconomyDisplay.textContent = "";
@@ -305,6 +352,12 @@ document.addEventListener("DOMContentLoaded", () => {
           if (document.getElementById('currencyValue') && document.getElementById('currencyBox')) {
             document.getElementById('currencyValue').textContent = "";
             document.getElementById('currencyBox').style.display = "block"; // Show currency box even if no country is selected
+          }
+          // Clear and stop the time card for this continent
+          const timeValue = document.getElementById(`${continent.toLowerCase()}TimeValue`);
+          if (timeValue) {
+            timeValue.textContent = "";
+            if (timeValue._interval) clearInterval(timeValue._interval);
           }
         }
       });
@@ -361,10 +414,189 @@ document.addEventListener("DOMContentLoaded", () => {
       labelUnder.style.marginTop = "10px";
       labelUnder.style.fontStyle = "italic";
       labelUnder.style.fontSize = "13px";
-      labelUnder.textContent = "Explore countries and their economic data.";
+      labelUnder.textContent = "Explore countries and their data.";
       box.appendChild(labelUnder);
 
       container.appendChild(box);
+
+      // --- Place this block after you append labelUnder and box to container ---
+
+      // Create a horizontal container for the info boxes
+      const infoContainer = document.createElement('div');
+      infoContainer.style.display = "flex";
+      infoContainer.style.flexDirection = "row";
+      infoContainer.style.gap = "14px";
+      infoContainer.style.margin = "14px 0 24px 0";
+
+      // Population card (first)
+      const populationBoxH = document.createElement('div');
+      populationBoxH.style.cssText = `
+        border: 1px solid #b3ffb3;
+        background: #f0fff0;
+        border-radius: 8px;
+        padding: 12px;
+        width: 180px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      `;
+      populationBoxH.innerHTML = `
+        <span style="font-size:20px;margin-bottom:4px;color:#2a8f4d;"><i class="fas fa-users"></i></span>
+        <strong>Population</strong>
+        <p id="${continent.toLowerCase()}PopulationValue" style="margin: 8px 0 0 0;"></p>
+      `;
+      infoContainer.appendChild(populationBoxH);
+
+      // Economy card (second)
+      const economyBoxH = document.createElement('div');
+      economyBoxH.style.cssText = `
+        border: 1px solid #b3d1ff;
+        background: #e6f2ff;
+        border-radius: 8px;
+        padding: 12px;
+        width: 180px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      `;
+      economyBoxH.innerHTML = `
+        <span style="font-size:20px;margin-bottom:4px;color:#2a4d8f;"><i class="fas fa-chart-line"></i></span>
+        <strong>Economy</strong>
+        <p id="${continent.toLowerCase()}EconomyValue" style="margin: 8px 0 0 0;"></p>
+      `;
+      infoContainer.appendChild(economyBoxH);
+
+      // Currency box with icon
+      const currencyBoxH = document.createElement('div');
+      currencyBoxH.style.cssText = `
+        border: 1px solid #ffd966;
+        background: #fffbe6;
+        border-radius: 8px;
+        padding: 12px;
+        width: 180px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      `;
+      currencyBoxH.innerHTML = `
+        <span style="font-size:20px;margin-bottom:4px;color:#8f6f2a;"><i class="fas fa-coins"></i></span>
+        <strong>Currency</strong>
+        <p id="${continent.toLowerCase()}CurrencyValue" style="margin: 8px 0 0 0;"></p>
+      `;
+      infoContainer.appendChild(currencyBoxH);
+
+      // Exportation box with icon
+      const exportationBoxH = document.createElement('div');
+      exportationBoxH.style.cssText = `
+        border: 1px solid #8fd9ff;
+        background: #e6f7ff;
+        border-radius: 8px;
+        padding: 12px;
+        width: 180px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      `;
+      exportationBoxH.innerHTML = `
+        <span style="font-size:20px;margin-bottom:4px;color:#2a6f8f;"><i class="fas fa-box-open"></i></span>
+        <strong>Exportation</strong>
+        <p id="${continent.toLowerCase()}ExportationValue" style="margin: 8px 0 0 0;"></p>
+      `;
+      infoContainer.appendChild(exportationBoxH);
+
+      // Importation box with icon
+      const importationBoxH = document.createElement('div');
+      importationBoxH.style.cssText = `
+        border: 1px solid #ffb3b3;
+        background: #fff0f0;
+        border-radius: 8px;
+        padding: 12px;
+        width: 180px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      `;
+      importationBoxH.innerHTML = `
+        <span style="font-size:20px;margin-bottom:4px;color:#8f2a2a;"><i class="fas fa-truck-loading"></i></span>
+        <strong>Importation</strong>
+        <p id="${continent.toLowerCase()}ImportationValue" style="margin: 8px 0 0 0;"></p>
+      `;
+      infoContainer.appendChild(importationBoxH);
+
+      // Time card for each continent
+      const timeBoxH = document.createElement('div');
+      timeBoxH.style.cssText = `
+        border: 1px solid #b3e6ff;
+        background: #f0fbff;
+        border-radius: 8px;
+        padding: 12px;
+        width: 180px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      `;
+      timeBoxH.innerHTML = `
+        <span style="font-size:20px;margin-bottom:4px;color:#2a6f8f;"><i class="fas fa-clock"></i></span>
+        <strong>Time</strong>
+        <p id="${continent.toLowerCase()}TimeValue" style="margin: 8px 0 0 0;"></p>
+      `;
+      infoContainer.appendChild(timeBoxH);
+
+      // Insert the horizontal info container after the continent box
+      container.appendChild(infoContainer);
+
+      // --- Add this code after your dropdown change event to update the values in the cards ---
+      dropdown.addEventListener("change", function () {
+        if (this.value) {
+          document.getElementById(`${continent.toLowerCase()}EconomyValue`).textContent = countryEconomy[this.value] || "Data not available";
+          document.getElementById(`${continent.toLowerCase()}CurrencyValue`).textContent = countryCurrency[this.value] || "Data not available";
+          document.getElementById(`${continent.toLowerCase()}ExportationValue`).textContent = countryExportation[this.value] || "Data not available";
+          document.getElementById(`${continent.toLowerCase()}ImportationValue`).textContent = countryImportation[this.value] || "Data not available";
+          // Show population in the population card for this continent
+          const popValue = document.getElementById(`${continent.toLowerCase()}PopulationValue`);
+          if (popValue) {
+            popValue.textContent = countryPopulation[this.value] || "Data not available";
+          }
+          // Show local time in the time card for this country
+          const timeValue = document.getElementById(`${continent.toLowerCase()}TimeValue`);
+          if (timeValue) {
+            const tz = countryTimezones[this.value] || "UTC";
+            function updateLocalTime() {
+              const now = new Date();
+              try {
+                timeValue.textContent = now.toLocaleTimeString("en-US", { timeZone: tz });
+              } catch {
+                timeValue.textContent = now.toLocaleTimeString();
+              }
+            }
+            updateLocalTime();
+            if (timeValue._interval) clearInterval(timeValue._interval);
+            timeValue._interval = setInterval(updateLocalTime, 1000);
+          }
+        } else {
+          document.getElementById(`${continent.toLowerCase()}EconomyValue`).textContent = "";
+          document.getElementById(`${continent.toLowerCase()}CurrencyValue`).textContent = "";
+          document.getElementById(`${continent.toLowerCase()}ExportationValue`).textContent = "";
+          document.getElementById(`${continent.toLowerCase()}ImportationValue`).textContent = "";
+          // Clear the population card for this continent
+          const popValue = document.getElementById(`${continent.toLowerCase()}PopulationValue`);
+          if (popValue) {
+            popValue.textContent = "";
+          }
+          // Clear and stop the time card for this continent
+          const timeValue = document.getElementById(`${continent.toLowerCase()}TimeValue`);
+          if (timeValue) {
+            timeValue.textContent = "";
+            if (timeValue._interval) clearInterval(timeValue._interval);
+          }
+        }
+      });
     });
   }
 });
