@@ -1,75 +1,32 @@
-# My VS Code Project
+# World Statistics Dashboard
 
-# My Project
+## Table of Contents
+- [📌 Project Overview](#project-overview)
+- [🎨 UX/UI Design](#uxui-design)
+- [🛠️ User Stories](#user-stories)
+- [🎨 Colours](#colours)
+- [🔠 Fonts](#fonts)
+- [📐 Wireframes](#wireframes)
+- [🖼️ Imagery](#imagery)
+- [🚀 Features](#features)
+- [🛠️ Built With](#built-with)
+- [✅ Testing](#testing)
+- [🚀 Deployment](#deployment)
+- [🔮 Future Features](#future-features)
+- [🐞 Known Bugs](#known-bugs)
+- [📜 Citation](#citation)
 
-## 📌 [Project Overview](#project-overview)
-
-## 🎨 [UX/UI Design](#uxui-design)
-
-## 🛠️ [User Stories](#user-stories)
-
-## 🎨 [Colours](#colours)
-
-## 🔠 [Fonts](#fonts)
-
-## 📐 [Wireframes](#wireframes)
-## 🖼️ [Imagery](#imagery)
-## 🚀 [Features](#features)
-## 🛠️ [Built With](#built-with)
-## ✅ [Testing](#testing)
-## 🚀 [Deployment](#deployment)
-## 🔮 [Future Features](#future-features)
-## 🐞 [Known Bugs](#known-bugs)
-## 📜 [Citation](#citation)
-
-# My Project
-
-
-📜 Citation
-
-Table of Contents
-[📌 Project Overview](#project-overview)
-
-[🎨 UX/UI Design](#uxui-design)
-
-[🛠️ User Stories](#user-stories)
-
-[🎨 Colours](#colours)
-
-[🔠 Fonts](#fonts)
-
-[📐 Wireframes](#wireframes)
-
-[🖼️ Imagery](#imagery)
-
-[🚀 Features](#features)
-
-[🛠️ Built With](#built-with)
-
-[✅ Testing](#testing)
-
-[🚀 Deployment](#deployment)
-
-[🔮 Future Features](#future-features)
-
-[🐞 Known Bugs](#known-bugs)
-
-[📜 Citation](#citation)
-
-📌 Project Overview
+## 📌 Project Overview
 🎯 Key Objectives:
-Build a one-page interactive global statistics dashboard using HTML, CSS, and JavaScript
+- Build a one-page interactive global statistics dashboard using HTML, CSS, and JavaScript
+- Focus on user experience, responsive design, and basic DOM manipulation
+- Provide real-world data presentation (static or via APIs)
+- Deploy the project using GitHub Pages
 
-Focus on user experience, responsive design, and basic DOM manipulation
-
-Provide real-world data presentation (static or via APIs)
-
-Deploy the project using GitHub Pages
-
-🎨 UX/UI Design
+## 🎨 UX/UI Design
 A clean, intuitive layout displaying global data points in modular, color-coded sections. The dashboard is designed with clarity and accessibility in mind, optimized for desktops and mobile screens.
 
-🛠️ User Stories
+## 🛠️ User Stories
 As a user, I want to:
 
 ✅ View population stats by continent.
@@ -84,111 +41,90 @@ As a user, I want to:
 
 ✅ Load the app quickly with minimal interaction needed.
 
-🎨 Colours
-Colour Name	Hex Code	Usage
-Orange	#ffa500	Background
-Light Blue	#e6f2ff	Economy section background
-Pale Yellow	#fffbe6	Currency section background
-Sky Blue	#e6f7ff	Exportation section background
-Soft Red	#fff0f0	Importation section background
+## 🎨 Colours
+
+| Colour Name | Hex Code | Usage |
+|-------------|----------|-------|
+| Orange | #ffa500 | Background |
+| Light Blue | #e6f2ff | Economy section background |
+| Pale Yellow | #fffbe6 | Currency section background |
+| Sky Blue | #e6f7ff | Exportation section background |
+| Soft Red | #fff0f0 | Importation section background |
 
 A warm and vibrant palette to distinguish sections and enhance visual accessibility.
 
-🔠 Fonts
+## 🔠 Fonts
 Roboto (from Google Fonts) is used for both headings and body text for readability and professional appearance.
 
-📐 Wireframes
+## 📐 Wireframes
 Wireframes are designed for a single-page application showing a header, multiple stat boxes, and a responsive footer.
 📌 [Add wireframe screenshots or Figma links here]
 
-🖼️ Imagery
+## 🖼️ Imagery
 The app uses Font Awesome icons and emojis to clearly represent each data section, reducing image load and improving performance.
 
-🚀 Features
-📊 Data Sections
-🌍 Population by continent (dynamic container)
+## 🚀 Features
 
-💰 Economy stats (section ready, placeholder UI)
+### 📊 Data Sections
+- 🌍 Population by continent (dynamic container)
+- 💰 Economy stats (section ready, placeholder UI)
+- 💱 Currency box with triangle pointer
+- 📦 Exportation and 📥 Importation stat cards (hidden/commented for future use)
 
-💱 Currency box with triangle pointer
+### 🎨 UI & Layout
+- Responsive layout using inline and class styles
+- Font Awesome icons for visual cues
+- Colored boxes with soft edges and shadows
+- Hidden sections can be toggled using JavaScript
 
-📦 Exportation and 📥 Importation stat cards (hidden/commented for future use)
+## 🛠️ Built With
 
-🎨 UI & Layout
-Responsive layout using inline and class styles
+### 🖥️ Core Technologies
+- HTML5
+- CSS3
+- JavaScript
 
-Font Awesome icons for visual cues
+### 📚 Libraries & Resources
+- Google Fonts (Roboto)
+- Font Awesome (icons)
+- GitHub for version control and hosting
 
-Colored boxes with soft edges and shadows
+## ✅ Testing
+- ✅ HTML validated via W3C Validator
+- ✅ CSS validated via Jigsaw CSS Validator
+- ✅ JavaScript tested manually in browser dev tools
+- ✅ Layout tested on Chrome, Firefox, and Edge
+- ✅ Mobile responsiveness verified using device toolbar
 
-Hidden sections can be toggled using JavaScript
-
-🛠️ Built With
-🖥️ Core Technologies
-HTML5
-
-CSS3
-
-JavaScript
-
-📚 Libraries & Resources
-Google Fonts (Roboto)
-
-Font Awesome (icons)
-
-GitHub for version control and hosting
-
-✅ Testing
-✅ HTML validated via W3C Validator
-
-✅ CSS validated via Jigsaw CSS Validator
-
-✅ JavaScript tested manually in browser dev tools
-
-✅ Layout tested on Chrome, Firefox, and Edge
-
-✅ Mobile responsiveness verified using device toolbar
-
-🚀 Deployment
+## 🚀 Deployment
 The project is deployed using GitHub Pages.
 
 📌 Live Demo: [World-Statistics-Dashboard](https://your-username.github.io/World-Statistics-Dashboard/)
 
-🔮 Future Features
-🌍 Connect to live data sources (e.g., World Bank, REST Countries, ExchangeRate.host)
+## 🔮 Future Features
+- 🌍 Connect to live data sources (e.g., World Bank, REST Countries, ExchangeRate.host)
+- 📈 Add interactive charts with Chart.js
+- 🔀 Dropdown selector to compare multiple countries
+- 🌑 Dark mode toggle
+- 📦 Enable import/export stats dynamically
+- 🌐 Language switcher for international users
 
-📈 Add interactive charts with Chart.js
+## 🐞 Known Bugs
+- ❌ Placeholder data remains static unless hooked to APIs
+- ❌ Some layout items are hidden and commented in HTML
+- ❌ Needs further accessibility validation (ARIA, screen reader testing)
 
-🔀 Dropdown selector to compare multiple countries
+## 📜 Citation
 
-🌑 Dark mode toggle
+### 📚 Fonts & Icons
+- Roboto from Google Fonts
+- Font Awesome for section icons
 
-📦 Enable import/export stats dynamically
-
-🌐 Language switcher for international users
-
-🐞 Known Bugs
-❌ Placeholder data remains static unless hooked to APIs
-
-❌ Some layout items are hidden and commented in HTML
-
-❌ Needs further accessibility validation (ARIA, screen reader testing)
-
-📜 Citation
-📚 Fonts & Icons
-Roboto from Google Fonts
-
-Font Awesome for section icons
-
-🛠️ Tools Used
-VS Code
-
-GitHub Pages for deployment
-
-Chrome DevTools for debugging
-
-W3C Validator for HTML
-
-Jigsaw Validator for CSS
+### 🛠️ Tools Used
+- VS Code
+- GitHub Pages for deployment
+- Chrome DevTools for debugging
+- W3C Validator for HTML
+- Jigsaw Validator for CSS
 
 
