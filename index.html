@@ -81,15 +81,60 @@
 
     <script src="assets/js/scripts.js"></script>
     <script>
-      document.getElementById('toggleDarkMode').onclick = function() {
-        document.body.classList.toggle('dark-mode');
-        this.classList.toggle('btn-light');
-        this.classList.toggle('btn-dark');
-        this.innerHTML = document.body.classList.contains('dark-mode')
-          ? '<i class="fas fa-sun"></i> Light Mode'
-          : '<i class="fas fa-moon"></i> Dark Mode';
-      };
-    </script>
+document.getElementById('toggleDarkMode').onclick = function() {
+    document.body.classList.toggle('dark-mode');
+
+    // Only update color, do NOT touch textContent!
+    document.querySelectorAll(
+        '.continent-box p, .continent-box strong, .continent-box span, .continent-box .number'
+    ).forEach(el => {
+        // Use yellow for numbers and white for other text in dark mode, else default
+        if (document.body.classList.contains('dark-mode')) {
+            if (
+                el.classList.contains('number') ||
+                el.parentElement && (
+                    el.parentElement.id && (
+                        el.parentElement.id.endsWith('EconomyValue') ||
+                        el.parentElement.id.endsWith('CurrencyValue') ||
+                        el.parentElement.id.endsWith('ExportationValue') ||
+                        el.parentElement.id.endsWith('ImportationValue') ||
+                        el.parentElement.id.endsWith('TimeValue') ||
+                        el.parentElement.id.endsWith('PopulationValue')
+                    )
+                )
+            ) {
+                el.style.color = "#ffe082";
+            } else {
+                el.style.color = "#f1f1f1";
+            }
+        } else {
+            if (
+                el.classList.contains('number') ||
+                el.parentElement && (
+                    el.parentElement.id && (
+                        el.parentElement.id.endsWith('EconomyValue') ||
+                        el.parentElement.id.endsWith('CurrencyValue') ||
+                        el.parentElement.id.endsWith('ExportationValue') ||
+                        el.parentElement.id.endsWith('ImportationValue') ||
+                        el.parentElement.id.endsWith('TimeValue') ||
+                        el.parentElement.id.endsWith('PopulationValue')
+                    )
+                )
+            ) {
+                el.style.color = "#333";
+            } else {
+                el.style.color = "";
+            }
+        }
+    });
+
+    this.classList.toggle('btn-light');
+    this.classList.toggle('btn-dark');
+    this.innerHTML = document.body.classList.contains('dark-mode')
+        ? '<i class="fas fa-sun"></i> Light Mode'
+        : '<i class="fas fa-moon"></i> Dark Mode';
+};
+</script>
 </body>
 
 </html>
