@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Fake world data (you can later fetch from APIs like World Bank or REST Countries)
 const worldStats = {
   population: "8,045,000,000 people",
@@ -117,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-=======
 // Fake world data (you can later fetch from APIs like World Bank or REST Countries)
 const worldStats = {
   population: "8,045,000,000 people",
@@ -236,4 +234,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
->>>>>>> 88602b892d5e317a7492d8e1cfa4f225f88e9f93
