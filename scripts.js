@@ -1,11 +1,3 @@
-// Fake world data (you can later fetch from APIs like World Bank or REST Countries)
-const worldStats = {
-  population: "8,045,000,000 people",
-  economy: "$104 trillion global GDP (2025 estimate)",
-  currency: "Most traded: USD, EUR, CNY",
-  exportation: "$22 trillion (Top: China, USA, Germany)",
-  importation: "$21.5 trillion (Top: USA, China, Germany)"
-};
 
 // Populate the content and create continent boxes
 document.addEventListener("DOMContentLoaded", () => {
