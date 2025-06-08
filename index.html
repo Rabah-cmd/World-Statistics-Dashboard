@@ -23,6 +23,31 @@
             background: #ffa500;
             /* orange */
         }
+
+        body.dark-mode {
+            background: #181a1b !important;
+            color: #f1f1f1 !important;
+        }
+        .dark-mode .continent-box {
+            background: #23272b !important;
+            border-color: #444 !important;
+            color: #f1f1f1 !important;
+        }
+        .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode strong {
+            color: #ffe082 !important;
+        }
+        .dark-mode footer {
+            background: #23272b !important;
+            color: #bbb !important;
+        }
+        .dark-mode #currencyBox,
+        .dark-mode #economyBox,
+        .dark-mode #exportationBox,
+        .dark-mode #importationBox {
+            background: #23272b !important;
+            color: #f1f1f1 !important;
+            border-color: #444 !important;
+        }
     </style>
 
     </head>
@@ -31,6 +56,9 @@
     <header>
         <h1>🌐 World Statistics Dashboard</h1>
         <p>Your quick glance at key global figures</p>
+        <button id="toggleDarkMode" style="position:absolute;top:18px;right:24px;z-index:1001;" class="btn btn-dark">
+          <i class="fas fa-moon"></i> Dark Mode
+        </button>
     </header>
 
     <main class="container" style="margin-top: 10px;">
@@ -167,6 +195,16 @@
     </footer>
 
     <script src="assets/js/scripts.js"></script>
+    <script>
+      document.getElementById('toggleDarkMode').onclick = function() {
+        document.body.classList.toggle('dark-mode');
+        this.classList.toggle('btn-light');
+        this.classList.toggle('btn-dark');
+        this.innerHTML = document.body.classList.contains('dark-mode')
+          ? '<i class="fas fa-sun"></i> Light Mode'
+          : '<i class="fas fa-moon"></i> Dark Mode';
+      };
+    </script>
 </body>
 
 </html>
