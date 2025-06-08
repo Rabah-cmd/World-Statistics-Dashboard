@@ -428,27 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoContainer.style.gap = "14px";
       infoContainer.style.margin = "14px 0 24px 0";
 
-      // Population card (first)
-      const populationBoxH = document.createElement('div');
-      populationBoxH.style.cssText = `
-        border: 1px solid #b3ffb3;
-        background: #f0fff0;
-        border-radius: 8px;
-        padding: 12px;
-        width: 180px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      `;
-      populationBoxH.innerHTML = `
-        <span style="font-size:20px;margin-bottom:4px;color:#2a8f4d;"><i class="fas fa-users"></i></span>
-        <strong>Population</strong>
-        <p id="${continent.toLowerCase()}PopulationValue" style="margin: 8px 0 0 0;"></p>
-      `;
-      infoContainer.appendChild(populationBoxH);
-
-      // Economy card (second)
+      // Economy box with icon
       const economyBoxH = document.createElement('div');
       economyBoxH.style.cssText = `
         border: 1px solid #b3d1ff;
@@ -547,6 +527,26 @@ document.addEventListener("DOMContentLoaded", () => {
         <p id="${continent.toLowerCase()}TimeValue" style="margin: 8px 0 0 0;"></p>
       `;
       infoContainer.appendChild(timeBoxH);
+
+      // Population card for each continent
+      const populationBoxH = document.createElement('div');
+      populationBoxH.style.cssText = `
+        border: 1px solid #b3ffb3;
+        background: #f0fff0;
+        border-radius: 8px;
+        padding: 12px;
+        width: 180px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      `;
+      populationBoxH.innerHTML = `
+        <span style="font-size:20px;margin-bottom:4px;color:#2a8f4d;"><i class="fas fa-users"></i></span>
+        <strong>Population</strong>
+        <p id="${continent.toLowerCase()}PopulationValue" style="margin: 8px 0 0 0;"></p>
+      `;
+      infoContainer.appendChild(populationBoxH);
 
       // Insert the horizontal info container after the continent box
       container.appendChild(infoContainer);
