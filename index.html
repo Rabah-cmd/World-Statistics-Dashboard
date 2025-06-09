@@ -68,7 +68,7 @@
 
     <main class="container" style="margin-top: 10px;">
         <section id="population">
-            <h2>🌍 Population</h2>
+            <h2>🌍 World Statistics</h2>
             <div id="continentsContainer"></div>
         </section>
     </main>
@@ -85,7 +85,7 @@ const infoData = [
     { label: "Economy", value: "", icon: "💰", resultId: "economyResult" },
     { label: "Exportation", value: worldStats.exportation, icon: "📦" },
     { label: "Importation", value: worldStats.importation, icon: "🛬" },
-    { label: "Currencies", value: worldStats.currency, icon: "💱" },
+    { label: "Currencies", value: worldStats.currency, icon: "💱", resultId: "currenciesResult" },
     { label: "Current Time", value: "", icon: "⏰", id: "worldTime" }
 ];
 
@@ -172,11 +172,22 @@ infoData.forEach(info => {
 dropdown.addEventListener("change", function () {
     if (this.value) {
         const pop = countryPopulations[this.value] || "Unknown";
+        const eco = countryEconomies[this.value] || "Unknown";
+        const exportation = countryExportations[this.value] || "Unknown";
+        const importation = countryImportations[this.value] || "Unknown";
         countryDisplay.textContent = `Population of ${this.value}: ${pop}`; // REMOVE THIS LINE
     } else {
         countryDisplay.textContent = ""; // REMOVE THIS LINE
     }
 });
+if (currencyDiv) {
+    currencyDiv.textContent = currency; // Only the national currency
+}
+const tz = countryTimeZones[this.value] || undefined;
+let localTime = "Unknown";
+if (tz) {
+    localTime = new Date().toLocaleString("en-US", { timeZone: tz });
+}
     </script>
 </body>
 </html>
